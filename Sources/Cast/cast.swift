@@ -30,7 +30,7 @@ public func Cast<T>(_ typed: UnsafeMutablePointer<T>) -> UnsafeMutableRawPointer
 
 public extension Data
 {
-	public func CastCopiedBytes<T>() -> T {
+	func CastCopiedBytes<T>() -> T {
 
 		var d: T? = nil
 		withUnsafeMutablePointer(to: &d) { (p: UnsafeMutablePointer<T?>) in
