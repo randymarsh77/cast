@@ -13,5 +13,6 @@ let package = Package(
 		.target(
 			name: "Cast"
 		),
+		.testTarget(name: "CastTests", dependencies: ["Cast"]),
 	]
 )
