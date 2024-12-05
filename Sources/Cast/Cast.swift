@@ -32,10 +32,9 @@ public func cast<T>(_ typed: UnsafeMutablePointer<T>) -> UnsafeMutableRawPointer
 
 extension Data {
 	public func castCopiedBytes<T>() -> T {
-
 		var d: T?
 		withUnsafeMutablePointer(to: &d) { (p: UnsafeMutablePointer<T?>) in
-			self.copyBytes(to: Cast(p)!, count: MemoryLayout<T>.size)
+			self.copyBytes(to: cast(p)!, count: MemoryLayout<T>.size)
 		}
 		return d!
 	}
